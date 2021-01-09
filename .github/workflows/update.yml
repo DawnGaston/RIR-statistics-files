@@ -1,0 +1,40 @@
+name: Update
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '30 */1 * * *'
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download
+        run: |
+          wget -O afrinic https://ftp.apnic.net/stats/afrinic/delegated-afrinic-extended-latest
+          wget -O apnic https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest
+          wget -O arin https://ftp.apnic.net/stats/arin/delegated-arin-extended-latest
+          wget -O lacnic https://ftp.apnic.net/stats/lacnic/delegated-lacnic-extended-latest
+          wget -O ripencc https://ftp.apnic.net/stats/ripe-ncc/delegated-ripencc-extended-latest
+          wget -O iana https://ftp.apnic.net/stats/iana/delegated-iana-latest
+
+      - name: Commit
+        run: |
+          git config --global user.email AutoupdateRobot@email.com
+          git config --global user.name AutoupdateRobot
+          git add .
+          git commit -m "update new data" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
