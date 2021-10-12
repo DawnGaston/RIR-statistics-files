@@ -27,8 +27,8 @@
 #
 ######################################################################
 #
-2|iana|20211011|1659|19830101|20210506|+0000
-iana|*|asn|*|152|summary
+2|iana|20211012|1663|19830101|20211012|+0000
+iana|*|asn|*|156|summary
 iana|*|ipv4|*|1378|summary
 iana|*|ipv6|*|129|summary
 iana|ZZ|asn|0|1|19830101|reserved|ietf|iana
@@ -140,6 +140,10 @@ iana|ZZ|asn|143674|1024|20210506|allocated|apnic|IANA
 iana|ZZ|asn|144698|1024|20210506|allocated|apnic|IANA
 iana|ZZ|asn|145722|1024|20210506|allocated|apnic|IANA
 iana|ZZ|asn|146746|1024|20210506|allocated|apnic|IANA
+iana|ZZ|asn|147770|1024|20211012|allocated|apnic|IANA
+iana|ZZ|asn|148794|1024|20211012|allocated|apnic|IANA
+iana|ZZ|asn|149818|1024|20211012|allocated|apnic|IANA
+iana|ZZ|asn|150842|1024|20211012|allocated|apnic|IANA
 iana|ZZ|asn|196608|1024|20061129|allocated|ripencc|IANA
 iana|ZZ|asn|197632|1024|20110104|allocated|ripencc|IANA
 iana|ZZ|asn|198656|1024|20120321|allocated|ripencc|IANA
